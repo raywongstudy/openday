@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.18/vue.min.js"></script>
+    <link rel="icon" href="image/iotsc_logo.png">
+    <title>我們的智慧城市</title>
+</head>
+
+<body class="main h-screen" id="app">
+    <div class="w-full">
+        <div class="w-full h-screen box flex flex-wrap justify-center place-items-center">
+            <div class="banner w-full p-2 top-0 absolute text-center text-2xl">請點擊正確答案後按“提交”</div>
+            <div class="flex flex-wrap w-full text-center text-3xl">
+                <div class="w-full p-2 question mb-5" style="background-color: #f51f1f;">現時完成題數:{{ question_number }} / 5</div>
+                <div class="w-full p-2 question mb-5">{{ question.title }}</div>
+                <div class="all_options flex flex-wrap w-full text-center">
+                    <div class="options text-center w-full" v-for="(key,option) in question.options">
+                        <input class="hidden" type="radio" :id="key" name="ans" :value="key" v-model="ans_key">
+                        <label class="cursor-pointer" :for="key">{{ option }}</label>
+                    </div>
+                </div>
+
+                <div class="w-full text-center game_button">
+                    <a class="p-5 m-3 inline-block text-2xl cursor-pointer" @click="SubmitAnswer" >提交答案 ></a>
+                </div>
+            </div>
+            <div v-show="show_alert" class="alert_container w-full text-center" >
+                <div class="alert_box flex-wrap flex justify-center place-items-center">
+                    <div v-if="question_result" class="alert_title text-black py-4 w-full">
+                        恭喜你答對了<br>
+                        <a v-if="question_number == 4" class="alert_button alert_button p-5 m-3 inline-block text-2xl" @click="" href="result.html">通關成功</a>
+                        <a v-else class="alert_button alert_button p-5 m-3 inline-block text-2xl" @click="GoNextQuestion">下一題</a>
+                    </div>
+                    <div v-else class="alert_title text-black py-4 w-full">
+                        錯誤答案！<br>
+                        <a class="alert_button p-5 m-3 inline-block text-2xl" @click="GoNextQuestionW">換一題試試吧 ></a>
+                    </div>
+                </div>
+                <div class="alert_background" @click="show_alert = !show_alert"></div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="bg-white w-full absolute bottom-0 flex justify-center place-items-center">
+            <a class="md:w-1/2" href="/">
+                <img class="iotsc_logo w-full px-10 py-5" src="image/logo.png" alt="">
+            </a>
+        </div>
+    </footer>
+</body>
+</html>
+
+<script src="js/data.js"></script>
+<script src="js/script.js"></script>
