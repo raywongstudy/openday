@@ -39,9 +39,9 @@
                     <div v-else class="alert_title text-black py-4 w-full">
                         錯誤答案！<br>
                         <p>正確答案是：{{ question.options[question.answer] }}</p>
-                        <a class="alert_button p-5 m-3 inline-block text-2xl" @click="show_alert = !show_alert">再試試！</a>
-
-                        <a class="alert_button p-5 m-3 inline-block text-2xl" @click="GoNextQuestionW">換一題試試吧 ></a>
+                        <!-- <a class="alert_button p-5 m-3 inline-block text-2xl" @click="show_alert = !show_alert">再試試！</a> -->
+                        <a v-else class="alert_button alert_button p-5 m-3 inline-block text-2xl" @click="GoNextQuestion">下一題</a>
+                        <!-- <a class="alert_button p-5 m-3 inline-block text-2xl" @click="GoNextQuestionW">換一題試試吧 ></a> -->
                     </div>
                 </div>
                 <div class="alert_background" @click="show_alert = !show_alert"></div>
@@ -50,7 +50,7 @@
     </div>
     <footer>
         <div class="bg-white w-full flex justify-center place-items-center">
-            <a class="md:w-1/2" href="/">
+            <a class="md:w-1/2" href="index.html">
                 <img class="iotsc_logo w-full px-10 py-5" src="image/logo.png" alt="">
             </a>
         </div>
