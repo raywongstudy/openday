@@ -21,7 +21,7 @@
                 <div class="all_options flex flex-wrap w-full text-center">
                     <div class="options text-center w-full" v-for="(key,option) in question.options">
                         <input class="hidden" type="radio" :id="key" name="ans" :value="key" v-model="ans_key">
-                        <label class="cursor-pointer" :for="key">{{ option }}</label>
+                        <label @click="had_select = true" class="cursor-pointer" :for="key">{{ option }}</label>
                     </div>
                 </div>
 

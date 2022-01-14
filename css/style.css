@@ -7,13 +7,15 @@ body{
     color:white;
     font-size: 2em;
     min-height: 100vh;
+    /* background-image: url("../image/background2.jpeg"); */
+
 }
 .main{
+    background-color: #00486b;
     background-image: url("../image/background2.jpeg");
-    background-repeat: no-repeat;
+    background-repeat: round;
     background-attachment: fixed;
     /* height: 100vh; */
-    /* background-color: #00a8ff; */
     min-height: 100vh;
 }
 
@@ -27,7 +29,10 @@ body{
     max-height: 300vh;
 }
 
-
+footer{
+    width:100%;
+}
+/* for pc */
 @media screen and (min-width: 900px) {
     /* game */
     .game_button > a{
@@ -152,6 +157,9 @@ body{
 /* for mobile */
 @media screen and (max-width: 900px) {
     /* game */
+    .main{
+        background-repeat: repeat;
+    }
     .game_button > a{
         width:80%;
         max-width: 500px;
