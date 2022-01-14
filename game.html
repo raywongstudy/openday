@@ -40,6 +40,7 @@
                         錯誤答案！<br>
                         <p>正確答案是：{{ question.options[question.answer] }}</p>
                         <!-- <a class="alert_button p-5 m-3 inline-block text-2xl" @click="show_alert = !show_alert">再試試！</a> -->
+                        <a v-if="question_number == 4" class="alert_button alert_button p-5 m-3 inline-block text-2xl" @click="" href="result.html">通關成功</a>
                         <a v-else class="alert_button alert_button p-5 m-3 inline-block text-2xl" @click="GoNextQuestion">下一題</a>
                         <!-- <a class="alert_button p-5 m-3 inline-block text-2xl" @click="GoNextQuestionW">換一題試試吧 ></a> -->
                     </div>
