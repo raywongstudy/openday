@@ -6,6 +6,7 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     color:white;
     font-size: 2em;
+    min-height: 100vh;
 }
 .main{
     /* background-image: url("../image/background.png"); */
@@ -13,12 +14,14 @@ body{
     background-attachment: fixed;
     /* height: 100vh; */
     background-color: #00a8ff;
+    min-height: 100vh;
 }
 
 .banner{
     background-color: #00486b;
     color:white;
 }
+
 
 @media screen and (min-width: 900px) {
     /* game */
@@ -75,7 +78,7 @@ body{
     }
 
     .promote a{
-        width: 20vh;
+        width: 60%;
         margin:10px;
         padding:10px;
 
@@ -180,7 +183,7 @@ body{
     }
 
     .promote a{
-        width: 20vh;
+        width: 60%;
         margin:10px;
         padding:10px;
 

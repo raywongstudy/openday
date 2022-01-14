@@ -131,16 +131,5 @@ var data = [
             D: "水災"
         },
         answer: "C"
-    },
-    {
-        id: 13,
-        title: "use?",
-        options: {
-            A: "无",
-            B: "保护性接地",
-            C: "防锈漆",
-            D: "绝缘"
-        },
-        answer: "B"
     }
 ]
